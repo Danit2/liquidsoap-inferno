@@ -11,8 +11,7 @@ url = getenv("STREAM_URL")
 
 s = input.http(url)
 
-# Stereo/Webstream auf Mono mischen.
-s = audio_to_mono(s)
+s = mean(s)
 
 s = mksafe(s)
 
@@ -20,5 +19,5 @@ output.alsa(
   id = "inferno_out",
   device = "inferno",
   bufferize = true,
-  (s : source(audio=pcm(mono)))
+  s
 )
