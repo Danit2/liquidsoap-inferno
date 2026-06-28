@@ -1,9 +1,11 @@
-set("log.file", false)
-set("log.stdout", true)
-set("log.level", 3)
+settings.init.allow_root.set(true)
 
-set("frame.audio.samplerate", 48000)
-set("frame.audio.channels", 2)
+settings.log.file.set(false)
+settings.log.stdout.set(true)
+settings.log.level.set(3)
+
+settings.frame.audio.samplerate.set(48000)
+settings.frame.audio.channels.set(2)
 
 url = getenv("STREAM_URL")
 
